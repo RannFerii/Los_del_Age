@@ -5,10 +5,7 @@
 </head>
 <body>
 
-<div align="center" class"titulo">
-    <IMG SRC="img/LDA1.png" class="IMG" ><br>
-    <IMG SRC="img/DB2.png"  width=100><br><br>
-</div>
+
 <?php
 try{
 	$base=new PDO("mysql:host=localhost; dbname=los_de_Age", "root","");
