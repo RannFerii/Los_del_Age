@@ -1,0 +1,17 @@
+body{
+	background-image: url("../img/fantasy.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 1500px 800px;
+}
+.IMG{
+	display: inline-block;
+}
+
+table{
+
+	margin: auto;
+	border: 4px black;
+	background-color:#ABABAB;
+}

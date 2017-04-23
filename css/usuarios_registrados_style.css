@@ -1,0 +1,7 @@
+body{
+	background-image: url("../img/knigh.jpg");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 1500px 800px;
+}
