@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Cerrar Sesion</title>
@@ -7,7 +7,7 @@
 <?php
 	session_start();
 	session_destroy();
-	header("location:index.php");
+	header("location:../index.php");
 ?>
 
 </body>

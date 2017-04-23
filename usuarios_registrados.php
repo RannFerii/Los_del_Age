@@ -2,14 +2,47 @@
 <html>
 <head>
 	<title>usuarios registrados</title>
-	<link rel="stylesheet" type="text/css" href="css/usuarios_registrados_style.css">
+	<link rel="stylesheet" href="css/nav_style.css">
+
 </head>
 <body>
+ <header>
+    <div id="logo" class="menuUp">
+        <IMG SRC="img/LDA1.png" height=50 >
+        <IMG SRC="img/DB2.png"  width=50>
+        <div id="navToggle"><a href="#">Menu</a></div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Registro</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li>
+                <a href="#">Opciones <span class="toggle">Expand</span><span class="caret"></span></a>
+                <nav>
+                    <ul>
+                        <li><a href="#">Tablas</a></li>
+                        <li><a href="#">Mas</a></li>
+                        <li><a href="#">Humour</a></li>
+                        <li><a href="#">Opciones</a></li>
+                        <li><a href="#">Music</a></li>
+                    </ul>
+                </nav>
+            </li>
+            <li><a href="#">MYSQL</a></li>
+            <li>
+            	<a href="#">Sesion <span class="toggle">Expand</span><span class="caret"></span></a>
+                <nav>
+                    <ul>
+                        <li><a href="form/cerrar_sesion.php">Cerrar</a></li>
+                        
+                    </ul>
+                </nav>
+            </li>
+            
+        </ul>
+    </nav>
+</header>
 
-<div align="center" class"titulo">
-    <IMG SRC="img/LDA1.png" class="IMG" ><br>
-    <IMG SRC="img/DB2.png"  width=100><br><br>
-</div>
 <?php
 
 session_start();
@@ -26,10 +59,12 @@ if(!isset($_SESSION["usuario"])){
 echo "Buen dia:".$_SESSION["usuario"] ."<br><br>";
 ?>
 
-<p><a href="cerrar_sesion.php">Cerrar sesion</a></p>
 
 
 
 
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/nav.js"></script>
 </body>
 </html>
