@@ -82,7 +82,7 @@ label {
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
+  
   pointer-events: none;
   font-size: 22px;
 }
@@ -176,3 +176,12 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+.field-slid {
+  background: transparent;
+  margin-left: 132px;
+  height: 36px;
+  color: rgb(169, 169, 169);
+  font-size: 19px;
+}
+
+
