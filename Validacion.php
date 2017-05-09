@@ -4,27 +4,25 @@
 	<title>Registro de usuarios</title>
 </head>
 <body>
-
-
 <?php
 try{
 	$base=new PDO("mysql:host=localhost; dbname=los_de_Age", "root","");
 	$base-> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-	$sql="SELECT * from _user_password where USUARIOS=:login and PASSWORD= :password";
+	$sql="SELECT * from _user where email=:email and password= :password";
 	$resultado=$base-> prepare ($sql);
-	$login=htmlentities(addslashes($_POST["login"]));
+	$email=htmlentities(addslashes($_POST["email"]));
 	$password=htmlentities(addslashes($_POST["password"]));
-	$resultado->bindValue(":login",$login);
+	$resultado->bindValue(":email",$email);
 	$resultado->bindValue(":password",$password);
 	$resultado->execute();
 	$registro=$resultado->rowCount();
 	if($registro!=0){
 		session_start();
-		$_SESSION["usuario"]=$_POST["login"];
-		header("location:usuarios_registrados.php");
+		$_SESSION["nombre"]=$_POST["emaidl"];
+		header("location:index.php");
 
 	}else{
-		header("location:index.php");
+		header("location:login.php");
 
 	}
 
