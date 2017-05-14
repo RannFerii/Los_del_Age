@@ -9,7 +9,7 @@
 
 	<body>
 
-		<form class="form-style-4" action="../CRUD/create_profesor.php" method="post">
+		<form class="form-style-4" action="CRUD/create.php" method="post">
 		<label align="center">Profesor</label><br>
 		<label >
 		<span>Nombre</span><input type="text" name="nombre" required="true" />
@@ -30,7 +30,7 @@
 		<span>Telefono</span><input type="text" name="telefono" required="true" />
 		</label>
 		<label>
-		<span>&nbsp;</span><input type="submit" name="agregar" value="Agregar profesor" />
+		<span>&nbsp;</span><input type="submit" name="agregar_profesor" value="Agregar profesor" />
 		</label>
 		</form>
 

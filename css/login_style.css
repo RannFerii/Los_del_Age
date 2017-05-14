@@ -6,10 +6,6 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  
-  font-family: 'Titillium Web', sans-serif;
-}
 
 a {
   text-decoration: none;
@@ -184,4 +180,21 @@ textarea {
   font-size: 19px;
 }
 
+body{
+  background-image: url("../img/fantasy.jpg");
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Titillium Web', sans-serif;
 
+}
+.IMG{
+  display: inline-block;
+}
+
+table{
+
+  margin: auto;
+  border: 4px black;
+  background-color:#ABABAB;
+}

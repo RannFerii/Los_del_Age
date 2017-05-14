@@ -20,14 +20,12 @@
 	    <nav>
 	        <ul>
 	            <li>
-	            	<a href="#">Mostrar<span class="toggle">Expand</span><span class="caret"></span></a>
+	            	<a href="#">Catalogos<span class="toggle">Expand</span><span class="caret"></span></a>
 	                <nav>
 	                    <ul>
 	                        <li><a href="CRUD/read.php">Profesor</a></li>
 	                        <li><a href="../CRUD/read_alumno.php"target="central">Alumno</a></li>
-	                        <li><a href="../CRUD/read_facultad.php"target="central">Facultad</a></li>
-	                        <li><a href="#">Opciones</a></li>
-	                        <li><a href="#">Music</a></li>
+	                        <li><a href="CRUD/read_facultad.php"target="central">Facultad</a></li>
 	                    </ul>
 	                </nav>
 	            </li>

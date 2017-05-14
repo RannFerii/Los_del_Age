@@ -3,20 +3,19 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="css/insertar_style.css">
-		<title>Agregar Facultad</title>
+		<title>Agregar grupo</title>
 		<script src="js/insertar.js"></script>
 	</head>
 
 	<body>
 
 		<form class="form-style-4" action="CRUD/create.php" method="post">
-		<label align="center">Facultad</label><br>
+		<label align="center">Grupo</label><br>
 		<label >
-		<span>Nombre:</span><input type="text" name="nombre" required="true" />
-		</label>
-		<br>
-		<label>
-		<input type="submit" name="agregar_facultad" value="Agregar facultad" />
+		<span>Grupo:</span><input type="text" name="clave_grupo" required="true" />
+		</label><BR>
+		
+		<input type="submit" name="agregar_grupo" value="Agregar grupo" />
 		</label>
 		</form>
 
