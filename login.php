@@ -3,8 +3,8 @@
 <head>
     <title>INTERFAZ</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/index_style.css">
-    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+  
 
 </head>
 

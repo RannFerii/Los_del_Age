@@ -18,7 +18,7 @@ try{
 	$registro=$resultado->rowCount();
 	if($registro!=0){
 		session_start();
-		$_SESSION["nombre"]=$_POST["emaidl"];
+		$_SESSION["usuario"]=$_POST["email"];
 		header("location:index.php");
 
 	}else{

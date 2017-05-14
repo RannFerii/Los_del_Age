@@ -9,37 +9,37 @@
 
 <body>
 
-	<form class="form-style-4" action="" method="post">
+	<form class="form-style-4" action="CRUD/create.php" method="post">
 	<label align="center">Alumno</label><br>
 	<label for="field1">
-	<span>Matricula</span><input type="text" name="field1" required="true" />
+	<span>Matricula</span><input type="text" name="matricula" required="true" />
 	</label>
 	<label for="field2">
-	<span>Nombre</span><input type="email" name="field2" required="true" />
+	<span>Nombre</span><input type="text" name="nombre" required="true" />
 	</label>
 	<label for="field3">
-	<span>Apellido paterno</span><input type="text" name="field3" required="true" />
+	<span>Apellido paterno</span><input type="text" name="apellido_paterno" required="true" />
 	</label>
 	<label for="field1">
-	<span>Apellido materno</span><input type="text" name="field1" required="true" />
+	<span>Apellido materno</span><input type="text" name="apellido_materno" required="true" />
 	</label>
 	<label for="field2">
-	<span>Email</span><input type="text" name="field2" required="true" />
+	<span>Email</span><input type="text" name="email" required="true" />
 	</label>
 	<label for="field3">
-	<span>Dirección</span><input type="text" name="field3" required="true" />
+	<span>Dirección</span><input type="text" name="direccion" required="true" />
 	</label>
 	<label for="field1">
-	<span>Telefono</span><input type="text" name="field1" required="true" />
+	<span>Telefono</span><input type="text" name="telefono" required="true" />
 	</label>
 	<label for="field2">
-	<span>Tutor</span><input type="text" name="field2" required="true" />
+	<span>Tutor</span><input type="text" name="nombre_tutor" required="true" />
 	</label>
 	<label for="field3">
-	<span>Tel. del tutor</span><input type="text" name="field3" required="true" />
+	<span>Tel. del tutor</span><input type="text" name="telefono_tutor" required="true" />
 	</label>
 	<label for="field4">
-	<span>Email del tutor</span><input type="text" name="field3" required="true" />
+	<span>Email del tutor</span><input type="email" name="email_tutor" required="true" />
 	</label>
 
 	<label>
