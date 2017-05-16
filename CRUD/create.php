@@ -99,7 +99,7 @@ $materia=$_POST["nombre"];
 $tipo=$_POST["tipo"];
 $clave=$_POST["clave"];
 $grupo=$_POST["grupo"];
-$sql=" INSERT INTO `subject`(`nombre_materia`,`subject_type`,`clave_materia`,`grupo_id`) values ('$materia','$tipo','$clave','$grupo')";
+$sql=" INSERT INTO `subject`(`nombre_materia`,`subject_type`,`clave_materia`,`_group_id`) values ('$materia','$tipo','$clave','$grupo')";
 $db->query($sql);
 echo "<script type=\"text/javascript\">alert(\"Materia agregada\");</script>"; 
 echo '<meta http-equiv="Refresh" content="0;URL=../index.php">'; 

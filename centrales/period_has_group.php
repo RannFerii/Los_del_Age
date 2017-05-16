@@ -5,35 +5,10 @@
 		<link rel="stylesheet" href="css/insertar_style.css">
 		<title>period_has_group</title>
 		<script src="js/insertar.js"></script>
-
-
-		 <script>
-            function capturar(){
-            	  var porNombre=document.getElementsByName("facultad")[0].value;
-
-            	     document.getElementById("resultado").innerHTML=porNombre;
-            	      var variableJS ="5";
-
-            }
-
-           
-
-
-         
-
-
-        </script>
+		<script src="js/period_has_group.js"></script>
 
 	</head>
-
 	<body>
-	<?php
-$fac = "<script> document.write(variableJS) </script>";
-
-
-?>
-
-
 
 		<form class="form-style-4"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
 		<label align="center">perdiod_has_group</label><br>
@@ -53,42 +28,40 @@ $fac = "<script> document.write(variableJS) </script>";
 
 		<label>
 			<span>Facultad:</span>
-				<select  class= "field-slid" name="facultad" >
-			        
+				<select  class= "field-slid" name="facultad" id="query_facul" >
+			        <option value="-" >Seleccionar</option>
 			        <?php echo $option;?>
 		         </select>
 		</label>
 		<br>
-
-		<?php
-		if(isset($_POST['submit']))
-
-        {
-
-        	$id=$_POST["facultad"];
-
-
-			
-			$db= new Conexion();
-			$query2="SELECT DISTINCT id,nombre_carrera  FROM carrer where faculty_id='$id'";
-			$res2=$db->query($query2);
-			$option2='';
-			while($row2= mysqli_fetch_array($res2)){
-				$option2.= "<option value=\"$row2[id]\">$row2[nombre_carrera]</option>";
-			}
-		}
-		?>
-
 		<label>
 			<span>Carrera</span>
-				<select class= "field-slid" name="carrera" >
-			        
-			        <?php echo $option2;?>
+				<select class= "field-slid" name="carrera" id ="query_carrer">
+				<option value="-" >Seleccionar</option>
+		        </select>
+		</label>
+		<label>
+			<span>Ciclo escolar</span>
+				<select class= "field-slid" name="ciclo_escolar" id ="query_cycle">
+				<option value="-" >Seleccionar</option>
+		         </select>
+		</label>
+		<label>
+			<span>Periodo</span>
+				<select class= "field-slid" name="periodo" id ="query_period">
+				<option value="-" >Seleccionar</option>
+		         </select>
+		</label>
+
+		<label>
+			<span>Perio</span>
+				<select class= "field-slid" name="periodo" id ="query_period">
+				<option value="-" >Seleccionar</option>
 		         </select>
 		</label>
 		<label id="resultado"></label>
 		<label>
-		<input type="submit" name="submit" value="agregar_periodo" onclick="capturar()"/>
+		<input type="submit" name="submit" value="agregar" onclick="capturar()"/>
 		</label>
 		</form>
 
