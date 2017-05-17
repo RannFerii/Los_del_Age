@@ -9,8 +9,19 @@
   <script>
             $(document).ready(function(){
 
+              //REPORTEs
+                $('#reporte_alumno').click(function(){
+                $("#reporte").load("reportes/reporte_alumno.php");
+                                             });
+                $('#reporte_profesor').click(function(){
+                $("#reporte").load("reportes/reporte_profesor.php");
+                                             });
+                $('#reporte_materia').click(function(){
+                $("#reporte").load("reportes/reporte_materia.php");
+                                             });
+
                 //CENTRAL
-                $('#P_H_G').click(function(){
+                $('#C_H_S').click(function(){
                 $("#agregar_central").load("centrales/period_has_group.php");
                                              });
 
@@ -73,11 +84,25 @@
         </div>
         <nav>
             <ul>
+                 <li>
+                    <a href="#">Reportes<span class="toggle">Expand</span><span class="caret"></span></a>
+                    <nav>
+                        <ul>
+                            <li><a href="#" id="reporte_alumno">Alumno</a></li>
+                            <li><a href="#" id="reporte_profesor">Profesor</a></li>
+                            <li><a href="#" id="reporte_materia">Materia</a></li>
+                          
+                        </ul>
+                    </nav>
+                </li>
+
+
                 <li>
                     <a href="#">Central<span class="toggle">Expand</span><span class="caret"></span></a>
                     <nav>
                         <ul>
-                            <li><a href="#" id="P_H_G">central</a></li>
+                            <li><a href="#" id="C_H_S">cycle_has_subject</a></li>
+                            <li><a href="#" id="S_H_S">student_has_subject</a></li>
                           
                         </ul>
                     </nav>

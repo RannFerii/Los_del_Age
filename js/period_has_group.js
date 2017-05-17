@@ -1,3 +1,15 @@
+$('#lunes').text($('#checkbox1').val());
+
+$("#checkbox1").on('change', function() {
+  if ($(this).is(':checked')) {
+    $(this).attr('value', 'true');
+  } else {
+    $(this).attr('value', 'false');
+  }
+  
+  $('#lunes').text($('#checkbox1').val());
+});
+
 $(function(){
 
 	$("#query_facul").change(function(){ 
@@ -85,6 +97,33 @@ $(function(){
 	})
 
 });
+
+//subject group
+
+$(function(){
+
+	$("#query_group").change(function(){ 
+		var id= $(this).val();
+		
+		$.ajax({
+			url: 'jsSelect/js_group.php',
+			type: 'post',
+			data: {query_group:id},
+			success: function (data){
+
+				$("#query_subject")
+				.find('option')
+				.remove()
+				.end()
+				.append(data);
+				console.log(data);
+				
+			}
+		});
+	})
+
+});
+
 
 
 
