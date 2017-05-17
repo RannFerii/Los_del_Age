@@ -10,7 +10,7 @@
 	</head>
 	<body>
 
-		<form class="form-style-4"  method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+		<form class="form-style-4"  method="post"  action="CRUD/create.php" >
 		<label align="center">perdiod_has_group</label><br>
 		
 		<?php
@@ -53,17 +53,81 @@
 		         </select>
 		</label>
 
+	
+		<?php
+			
+			$query2="SELECT DISTINCT id,clave_grupo FROM _group";
+			$res2=$db->query($query2);
+			$option2='';
+			
+			while($row= mysqli_fetch_array($res2)){
+				$option2.= "<option value=\"$row[id]\">$row[clave_grupo]</option>";
+				
+			}
+		?>
+
 		<label>
-			<span>Perio</span>
-				<select class= "field-slid" name="periodo" id ="query_period">
+			<span>Grupo</span>
+				<select class= "field-slid" name="grupo" id ="query_group">
+				<option value="-" >Seleccionar</option>
+				 <?php echo $option2;?>
+		         </select>
+		</label>
+
+		<label>
+			<span>Materia</span>
+				<select class= "field-slid" name="materia" id ="query_subject">
 				<option value="-" >Seleccionar</option>
 		         </select>
 		</label>
-		<label id="resultado"></label>
+
+		<?php
+			
+			$query3="SELECT DISTINCT id,nombre FROM teacher";
+			$res3=$db->query($query3);
+			$option3='';
+			
+			while($row= mysqli_fetch_array($res3)){
+				$option3.= "<option value=\"$row[id]\">$row[nombre]</option>";
+				
+			}
+		?>
+
 		<label>
-		<input type="submit" name="submit" value="agregar" onclick="capturar()"/>
+			<span>Profesor</span>
+				<select class= "field-slid" name="profesor" id ="query_teacher">
+				<option value="-" >Seleccionar</option>
+				 <?php echo $option3?>
+		         </select>
+		</label>
+
+
+		<label>
+			<span>Dias habiles</span>
+
+			<input type='hidden' value='0' name='lunes'><br>
+  			<input type='checkbox' value='1' name='lunes'>lunes<br>
+  			<input type='hidden' value='0' name='martes'><br>
+  			<input type='checkbox' value='1' name='martes'>martes<br>
+  			<input type='hidden' value='0' name='miercoles'><br>
+  			<input type='checkbox' value='1' name='miercoles'>miercoles<br>
+  			<input type='hidden' value='0' name='jueves'><br>
+  			<input type='checkbox' value='1' name='jueves'>jueves<br>
+  			<input type='hidden' value='0' name='viernes'><br>
+  			<input type='checkbox' value='1' name='viernes'>viernes<br>
+  			<input type='hidden' value='0' name='sabado'><br>
+  			<input type='checkbox' value='1' name='sabado'>sabado<br>
+			
+
+				
+		</label>
+		
+		<label>
+		<input type="submit" name="agregar_cycle_has_student" value="Agregar"/>
 		</label>
 		</form>
+
+		
 
 	</body>
 </html>

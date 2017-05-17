@@ -4,6 +4,27 @@
 require '../conexion.class.php';
 $db = new Conexion();
 
+////////////////////////////////////////////////////CYCLE_HAS_STUDENT//////////////////////////////////////////////
+
+if(isset($_POST['agregar_cycle_has_student'])){
+$subject  = $_POST["materia"];
+$teacher=$_POST["profesor"];
+$ciclo_escolar=$_POST["ciclo_escolar"];
+
+$lunes=$_POST["lunes"];
+$martes=$_POST["martes"];
+$miercoles=$_POST["miercoles"];
+$jueves=$_POST["jueves"];
+$viernes=$_POST["viernes"];
+$sabado=$_POST["sabado"];
+
+$sql=" INSERT INTO `period_has_group`(`subject_id`,`teacher_id`,`lunes`,`martes`,`miercoles`,`jueves`,`viernes`,`sabado`,`school_cycle_id`) values ('$subject','$teacher','$lunes','$martes','$miercoles','$jueves','$viernes','$sabado','$ciclo_escolar')";
+$db->query($sql);
+echo "<script type=\"text/javascript\">alert(\"Tabla cental agregada\");</script>"; 
+echo '<meta http-equiv="Refresh" content="0;URL=../index.php">'; 
+}
+
+
 ////////////////////////////////////////////////////PRIMER FILTRO/////////////////////////////////////////////////
 
 //INSERTAR EN FACULTAD
