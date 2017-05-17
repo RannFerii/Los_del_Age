@@ -24,6 +24,9 @@
                 $('#C_H_S').click(function(){
                 $("#agregar_central").load("centrales/period_has_group.php");
                                              });
+                 $('#S_H_S').click(function(){
+                $("#agregar_central").load("centrales/period_has_group_has_student.php");
+                                             });
 
                 //CATALOGOS
 
@@ -159,6 +162,12 @@
     <tr>
 
     <p id="agregar_central"></p>
+      
+
+    </tr>
+    <tr>
+
+    <p id="reporte"></p>
       
 
     </tr>

@@ -24,6 +24,19 @@ echo "<script type=\"text/javascript\">alert(\"Tabla cental agregada\");</script
 echo '<meta http-equiv="Refresh" content="0;URL=../index.php">'; 
 }
 
+////////////////////////////////////////////////////STUDENT_HAS_SUBJECT//////////////////////////////////////////////
+
+if(isset($_POST['agregar_subject_has_student'])){
+$id  = $_POST["cycle_has_subject_id"];
+$alumno=$_POST["student_id"];
+$tipo=$_POST["tipo"];
+
+
+$sql=" INSERT INTO `student_has_subject`(`period_has_groud_id`,`student_id`,`student_subject_type`) values ('$id','$alumno','$tipo')";
+$db->query($sql);
+ 
+}
+
 
 ////////////////////////////////////////////////////PRIMER FILTRO/////////////////////////////////////////////////
 
