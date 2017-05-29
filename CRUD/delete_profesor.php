@@ -7,7 +7,9 @@ if(isset($_GET['id'])){
 	$query= "DELETE from `teacher` WHERE id =$id";
 	$db= new Conexion();
 	$db->query($query);
-	header("location:read_profesor.php");
+	
+	echo "<script type=\"text/javascript\">alert(\"Profesor eliminado\");</script>"; 
+    echo '<meta http-equiv="Refresh" content="0;URL=../index.php">'; 
 }
 
 ?>

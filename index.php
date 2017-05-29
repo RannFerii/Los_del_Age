@@ -9,65 +9,79 @@
   <script>
             $(document).ready(function(){
 
-              //REPORTEs
+              //ASISTENCIAS
+               $('#asistencia').click(function(){
+                $("#MENU").load("a_p/asistencias.php");
+                                             });
+                $('#promedio').click(function(){
+                $("#MENU").load("a_p/promedio.php");
+                                             });
+
+              //REPORTES
                 $('#reporte_alumno').click(function(){
-                $("#reporte").load("reportes/reporte_alumno.php");
+                $("#MENU").load("reportes/reporte_alumno.php");
                                              });
                 $('#reporte_profesor').click(function(){
-                $("#reporte").load("reportes/reporte_profesor.php");
+                $("#MENU").load("reportes/reporte_profesor.php");
                                              });
                 $('#reporte_materia').click(function(){
-                $("#reporte").load("reportes/reporte_materia.php");
+                $("#MENU").load("reportes/reporte_materia.php");
                                              });
 
                 //CENTRAL
                 $('#C_H_S').click(function(){
-                $("#agregar_central").load("centrales/period_has_group.php");
+                $("#MENU").load("centrales/period_has_group.php");
                                              });
                  $('#S_H_S').click(function(){
-                $("#agregar_central").load("centrales/period_has_group_has_student.php");
+                $("#MENU").load("centrales/period_has_group_has_student.php");
                                              });
 
                 //CATALOGOS
 
                 $('#profesor').click(function(){
-                $("#agregar_catalogos").load("catalogos/profesor.php");
+                $("#MENU").load("catalogos/profesor.php");
                                              });
 
                 $('#alumno').click(function(){
-                $("#agregar_catalogos").load("catalogos/alumno.php");
+                $("#MENU").load("catalogos/alumno.php");
                                              });
 
                 $('#carrera').click(function(){
-                $("#agregar_catalogos").load("catalogos/carrera.php");
+                $("#MENU").load("catalogos/carrera.php");
                                              });
 
                 $('#facultad').click(function(){
-                $("#agregar_catalogos").load("catalogos/facultad.php");
+                $("#MENU").load("catalogos/facultad.php");
                                              });
                 $('#ciclo').click(function(){
-                $("#agregar_catalogos").load("catalogos/ciclo_escolar.php");
+                $("#MENU").load("catalogos/ciclo_escolar.php");
                                              });
                 $('#periodo').click(function(){
-                $("#agregar_catalogos").load("catalogos/periodo.php");
+                $("#MENU").load("catalogos/periodo.php");
                                              });
                 $('#materia').click(function(){
-                $("#agregar_catalogos").load("catalogos/materia.php");
+                $("#MENU").load("catalogos/materia.php");
                                              });
                 $('#grupo').click(function(){
-                $("#agregar_catalogos").load("catalogos/grupo.php");
+                $("#MENU").load("catalogos/grupo.php");
                                              });
 
 
                 //MOSTRAR CATALOGOS
 
                 $('#r_profesor').click(function(){
-                $("#mostrar_catalogos").load("CRUD/read_profesor.php");
+                $("#MENU").load("CRUD/read_profesor.php");
                                              });
-                 $('#r_facultad').click(function(){
-                $("#mostrar_catalogos").load("CRUD/read_facultad.php");
+                 $('#r_alumno').click(function(){
+                $("#MENU").load("CRUD/read_alumno.php");
                                              });
                                         });
+              //MODIFICACIONES
+
+               $('#u_profesor').click(function(){
+                $("#MENU").load("CRUD/update_profesor.php");
+                                             });
+
 
                  //MOSTRAR relaciones
 
@@ -131,8 +145,19 @@
                     <nav>
                         <ul>
                             <li><a href="#" id="r_profesor">Profesores</a></li>
+                            <li><a href="#" id="r_alumno">Alumnos</a></li>
                             <li><a href="#" id="r_facultad">Facultades</a></li>
-                            <li><a href="#">Music</a></li>
+                            
+                        </ul>
+                    </nav>
+                </li>
+
+                 <li>
+                    <a href="#">A/P<span class="toggle">Expand</span><span class="caret"></span></a>
+                    <nav>
+                        <ul>
+                            <li><a href="#" id="asistencia">Asistencia</a></li>
+                            <li><a href="#" id="promedio">Promedio</a></li>
                         </ul>
                     </nav>
                 </li>
@@ -151,26 +176,14 @@
     </header>
 
 <table>
-    <tr>
-        <td>
-           <p id ="agregar_catalogos"></p>
-        </td>
-        <td>
-            <p id="mostrar_catalogos"></p>
-        </td>
-    </tr>
+    
     <tr>
 
-    <p id="agregar_central"></p>
+    <p id="MENU"></p>
       
 
     </tr>
-    <tr>
-
-    <p id="reporte"></p>
-      
-
-    </tr>
+    
 </table>
 
 

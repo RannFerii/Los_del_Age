@@ -26,14 +26,14 @@ echo '<meta http-equiv="Refresh" content="0;URL=../index.php">';
 
 ////////////////////////////////////////////////////STUDENT_HAS_SUBJECT//////////////////////////////////////////////
 
-if(isset($_POST['agregar_subject_has_student'])){
-$id  = $_POST["cycle_has_subject_id"];
+if(isset($_POST['agregar_student_has_subject'])){
+$id = $_POST["cycle_has_subject_id"];
 $alumno=$_POST["student_id"];
 $tipo=$_POST["tipo"];
 
-
-$sql=" INSERT INTO `student_has_subject`(`period_has_groud_id`,`student_id`,`student_subject_type`) values ('$id','$alumno','$tipo')";
+$sql=" INSERT INTO `student_has_subject`(`period_has_group_id`,`student_id`,`student_subject_type`) values ('$id','$alumno','$tipo')";
 $db->query($sql);
+
  
 }
 
@@ -138,29 +138,9 @@ $db->query($sql);
 echo "<script type=\"text/javascript\">alert(\"Materia agregada\");</script>"; 
 echo '<meta http-equiv="Refresh" content="0;URL=../index.php">'; 
 
-
 }
 
 
-
-//MODIFICAR PROFESOR
-if(isset($_POST['Modificar'])){
-
-$email=$_POST["email"];
-$grado=$_POST["grado"];
-$telefono=$_POST["telefono"];
-$nombre=$_POST["nombre"];
-$apellido_paterno=$_POST["apellido_paterno"];
-$apellido_materno=$_POST["apellido_materno"];
-$id=$_POST["id"];
-
-
-$sql=" UPDATE teacher set `nombre`='$nombre',`apellido_paterno`='$apellido_paterno',`apellido_materno`='$apellido_materno',`grado`='$grado',`correo_electronico`='$email',`telefono`='$telefono' WHERE id=$id";
-
-
-$db->query($sql);
-
-}
 ////////////////////////////////////////////////////TERCER FILTRO/////////////////////////////////////////////////
 
 //INSERTAR EN PROFESOR
