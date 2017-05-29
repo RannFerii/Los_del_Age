@@ -18,9 +18,11 @@
 			$query="SELECT DISTINCT id, subject_id, teacher_id,school_cycle_id FROM period_has_group";
 			$res=$db->query($query);
 			$option='';
+		
 			
 			while($row= mysqli_fetch_array($res)){
-				$option.= "<option value=\"$row[subject_id]\">$row[id]</option>";
+				$option.= "<option value=\"$row[id]\">$row[id]</option>";
+				
 				
 			}
 		?>
@@ -30,33 +32,21 @@
 				<select  class= "field-slid" name="cycle_has_subject_id" id="query_ciclo_materia" >
 			        <option value="-" >Seleccionar</option>
 			        <?php echo $option;?>
+
 		         </select>
+
+		        
 		</label>
 		<br>
 		<label>
 			<span>Materia:</span>
-				<select  class= "field-slid" name="cycle_has_subject_id" id="query_materia" >
-			        <option value="-" >Seleccionar</option>
+				<p  id="query_materia" >
 			        
-		         </select>
+			        
+		         </p>
 		</label>
 		<br>
-		<label>
-			<span>Profesor:</span>
-				<select  class= "field-slid" name="cycle_has_subject_id" id="query_profesor" >
-			        <option value="-" >Seleccionar</option>
-			       
-		         </select>
-		</label>
-		<br>
-		<label>
-			<span>Ciclo escolar:</span>
-				<select  class= "field-slid" name="cycle_has_subject_id" id="query_ciclo_escolar" >
-			        <option value="-" >Seleccionar</option>
-			       
-		         </select>
-		</label>
-		<br>
+
 	
 	
 		<?php
@@ -75,8 +65,8 @@
 			<span>Alumno</span>
 				<select class= "field-slid" name="student_id" id ="quer">
 				<option value="-" >Seleccionar</option>
-				 <?php echo $option2;?>
-		         </select>
+				<?php echo $option2;?>
+		        </select>
 		</label>
 
 		<label>
@@ -90,7 +80,7 @@
 		
 		
 		<label>
-		<input type="submit" name="agregar_cycle_has_student" value="Agregar"/>
+		<input type="submit" name="agregar_student_has_subject" value="Agregar"/>
 		</label>
 		</form>
 
