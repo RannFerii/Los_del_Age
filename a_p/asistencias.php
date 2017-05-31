@@ -45,53 +45,14 @@
 				<option value="-" >Seleccionar</option>
 		         </select>
 		</label>
-		
-	
-		<?php
-			
-			$query2="SELECT DISTINCT id,clave_grupo FROM _group";
-			$res2=$db->query($query2);
-			$option2='';
-			
-			while($row= mysqli_fetch_array($res2)){
-				$option2.= "<option value=\"$row[id]\">$row[clave_grupo]</option>";
-				
-			}
-		?>
 
-		<label>
-			<span>Grupo</span>
-				<select class= "field-slid" name="grupo" id ="query_group">
-				<option value="-" >Seleccionar</option>
-				 <?php echo $option2;?>
-		         </select>
-		</label>
-
+		<br>    
 		<label>
 			<span>Materia</span>
 				<select class= "field-slid" name="materia" id ="query_subject">
 				<option value="-" >Seleccionar</option>
 		         </select>
-		</label>
 
-		<?php
-			
-			$query3="SELECT DISTINCT id,nombre FROM teacher";
-			$res3=$db->query($query3);
-			$option3='';
-			
-			while($row= mysqli_fetch_array($res3)){
-				$option3.= "<option value=\"$row[id]\">$row[nombre]</option>";
-				
-			}
-		?>
-
-		<label>
-			<span>Profesor</span>
-				<select class= "field-slid" name="profesor" id ="query_teacher">
-				<option value="-" >Seleccionar</option>
-				 <?php echo $option3?>
-		         </select>
 		</label>
 		<br>
 		<label>

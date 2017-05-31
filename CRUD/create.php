@@ -9,7 +9,8 @@ $db = new Conexion();
 if(isset($_POST['agregar_cycle_has_student'])){
 $subject  = $_POST["materia"];
 $teacher=$_POST["profesor"];
-$ciclo_escolar=$_POST["ciclo_escolar"];
+$periodo=$_POST["periodo"];
+$horario_clases=$_POST["horario_clases"];
 
 $lunes=$_POST["lunes"];
 $martes=$_POST["martes"];
@@ -18,7 +19,7 @@ $jueves=$_POST["jueves"];
 $viernes=$_POST["viernes"];
 $sabado=$_POST["sabado"];
 
-$sql=" INSERT INTO `period_has_group`(`subject_id`,`teacher_id`,`lunes`,`martes`,`miercoles`,`jueves`,`viernes`,`sabado`,`school_cycle_id`) values ('$subject','$teacher','$lunes','$martes','$miercoles','$jueves','$viernes','$sabado','$ciclo_escolar')";
+$sql=" INSERT INTO `period_has_group`(`subject_id`,`teacher_id`,`lunes`,`martes`,`miercoles`,`jueves`,`viernes`,`sabado`,`horario_clases`,`period_id`) values ('$subject','$teacher','$lunes','$martes','$miercoles','$jueves','$viernes','$sabado','$horario_clases','$periodo')";
 $db->query($sql);
 echo "<script type=\"text/javascript\">alert(\"Tabla cental agregada\");</script>"; 
 echo '<meta http-equiv="Refresh" content="0;URL=../index.php">'; 
@@ -32,6 +33,9 @@ $alumno=$_POST["student_id"];
 $tipo=$_POST["tipo"];
 
 $sql=" INSERT INTO `student_has_subject`(`period_has_group_id`,`student_id`,`student_subject_type`) values ('$id','$alumno','$tipo')";
+echo $id."<br>";
+echo $alumno."<br>";
+echo $tipo."<br>";
 $db->query($sql);
 
  

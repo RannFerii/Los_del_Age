@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="css/insertar_style.css">
 		<title>Agregar Periodo</title>
-		<script src="js/insertar.js"></script>
+		<script src="js/periodo.js"></script>
 	</head>
 
 	<body>
@@ -12,6 +12,41 @@
 		<form class="form-style-4" action="CRUD/create.php" method="post">
 		<label align="center">Periodo</label><br>
 		<label>
+
+
+
+		<?php
+			require'../conexion.class.php';
+			$db= new Conexion();
+			$query="SELECT DISTINCT id,nombre_faculty FROM faculty";
+			$res=$db->query($query);
+			$option='';
+			while($row= mysqli_fetch_array($res)){
+				$option.= "<option value=\"$row[id]\">$row[nombre_faculty]</option>";
+			}
+		?>
+
+		<label>
+			<span>Facultad:</span>
+				<select class= "field-slid" id="query_faculty" >
+			        <option value="-">Seleccionar</option>
+			        <?php echo $option;?>
+		         </select>
+		</label>
+
+		<label>
+			<span>Carrera:</span>
+				<select class= "field-slid" id="query_carrer" >
+			        
+		         </select>
+		</label>
+		<label >
+		<span>Ciclo:</span>
+				<select class= "field-slid" id="query_cycle" name="ciclo" >
+			        
+		         </select>
+		</label>
+		<br>
 			<span>Periodo:</span>
 				<select class= "field-slid" name="periodo" >
 			        <option value="1°-Semestre">1°-Semestre</option>
@@ -50,24 +85,8 @@
 		         </select>
 		</label>
 		<br>
-		<?php
-			require'../conexion.class.php';
-			$db= new Conexion();
-			$query="SELECT DISTINCT id,nombre_ciclo FROM school_cycle";
-			$res=$db->query($query);
-			$option='';
-			while($row= mysqli_fetch_array($res)){
-				$option.= "<option value=\"$row[id]\">$row[nombre_ciclo]</option>";
-			}
-		?>
-
-		<label>
-			<span>Ciclo:</span>
-				<select class= "field-slid" name="ciclo" >
-			        <option value="-">Seleccionar</option>
-			        <?php echo $option;?>
-		         </select>
-		</label>
+		
+	
 		<br>
 		<label>
 		<input type="submit" name="agregar_periodo" value="Agregar periodo" />
