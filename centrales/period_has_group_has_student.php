@@ -12,63 +12,78 @@
 		<form class="form-style-4"  method="post"  action="CRUD/create.php" >
 		<label align="center">student_has_subject</label><br>
 		
-		<?php
+	    <?php
 			require'../conexion.class.php';
 			$db= new Conexion();
-			$query="SELECT DISTINCT id, subject_id, teacher_id,school_cycle_id FROM period_has_group";
+			$query="SELECT DISTINCT id,nombre_faculty FROM faculty";
 			$res=$db->query($query);
 			$option='';
-		
 			
 			while($row= mysqli_fetch_array($res)){
-				$option.= "<option value=\"$row[id]\">$row[id]</option>";
-				
+				$option.= "<option value=\"$row[id]\">$row[nombre_faculty]</option>";
 				
 			}
 		?>
 
 		<label>
-			<span>Ciclo- Materia:</span>
-				<select  class= "field-slid" name="cycle_has_subject_id" id="query_ciclo_materia" >
+			<span>Facultad:</span>
+				<select  class= "field-slid" name="facultad" id="query_facul" >
 			        <option value="-" >Seleccionar</option>
 			        <?php echo $option;?>
-
 		         </select>
-
-		        
 		</label>
 		<br>
 		<label>
-			<span>Materia:</span>
-				<p  id="query_materia" >
-			        
-			        
-		         </p>
+			<span>Carrera</span>
+				<select class= "field-slid" name="carrera" id ="query_carrer">
+				<option value="-" >Seleccionar</option>
+		        </select>
 		</label>
-		<br>
+		<label>
+			<span>Ciclo escolar</span>
+				<select class= "field-slid" name="ciclo_escolar" id ="query_cycle">
+				<option value="-" >Seleccionar</option>
+		         </select>
+		</label>
+		<label>
+			<span>Periodo</span>
+				<select class= "field-slid" name="periodo" id ="query_period">
+				<option value="-" >Seleccionar</option>
+		         </select>
+		</label>
 
-	
-	
-		<?php
+		<label>
+			<span>Materia</span>
+				<select class= "field-slid" name="materia" id ="query_subject">
+				<option value="-" >Seleccionar</option>
+		         </select>
+		</label>
+
+	    <?php
 			
-			$query2="SELECT DISTINCT id,nombre FROM student";
-			$res2=$db->query($query2);
-			$option2='';
+			$query="SELECT DISTINCT id,nombre FROM student";
+			$res=$db->query($query);
+			$option_student='';
 			
-			while($row= mysqli_fetch_array($res2)){
-				$option2.= "<option value=\"$row[id]\">$row[nombre]</option>";
+			while($row= mysqli_fetch_array($res)){
+				$option_student.= "<option value=\"$row[id]\">$row[nombre]</option>";
 				
 			}
 		?>
+
+
+
+		<!--ID PERIOD CONECTADO DE CYCLE_HAS_SUBJECT CON STUDENT_HAS_SUBJECT ¡-->
+		<select class= "field-slid" id="query_cycle_has_subject"  style="visibility:hidden" name="cycle_has_subject_id">			     
+		</select>
 
 		<label>
 			<span>Alumno</span>
-				<select class= "field-slid" name="student_id" id ="quer">
+				<select class= "field-slid" name="student_id" id ="query_student">
 				<option value="-" >Seleccionar</option>
-				<?php echo $option2;?>
+				<?php echo $option_student;?>
 		        </select>
 		</label>
-
 		<label>
 			<span>Tipo</span>
 				<select class= "field-slid" name="tipo" id ="query_subject">

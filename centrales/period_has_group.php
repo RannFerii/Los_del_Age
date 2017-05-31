@@ -100,6 +100,11 @@
 				 <?php echo $option3?>
 		         </select>
 		</label>
+		<br>
+		<label>
+			<span>Horario disponible:</span>
+				<input type="text" name="horario_clases" required="true" />
+		</label>
 
 
 		<label>

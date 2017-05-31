@@ -69,12 +69,12 @@ $(function(){
 		var id= $(this).val();
 		
 		$.ajax({
-			url: 'jsSelect/js_ciclo.php',
+			url: 'jsSelect/js_cycle_subject.php',
 			type: 'post',
 			data: {query_cycle:id},
 			success: function (data){
 
-				$("#query_period")
+				$("#query_subject")
 				.find('option')
 				.remove()
 				.end()
