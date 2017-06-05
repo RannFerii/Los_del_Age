@@ -1,11 +1,13 @@
 
 .form-style-4{
-	max-width: 450px;
+	max-width: 550px;
 	margin:10px auto;
 	font-size: 16px;
-	background: #495C70;
+	background: #EBEBEB;
 	padding: 30px 30px 15px 30px;
-	border: 5px solid #53687E;
+	border: 5px solid #002306;
+	background:rgba(100,100,100, 0.3);
+
 }
 .form-style-4 input[type=submit],
 .form-style-4 input[type=button],
@@ -26,7 +28,7 @@
 .form-style-4 label > span{
 	display: inline-block;
 	float: left;
-	width: 150px;
+	width: 75px;
 }
 .form-style-4 input[type=text],
 .form-style-4 input[type=date],
@@ -40,7 +42,7 @@
 	background: transparent;
 	border: none;
 	border-bottom: 1px dashed #83A4C5;
-	width: 275px;
+	width: 300px;
 	outline: none;
 	padding: 0px 0px 0px 0px;
 	font-style: italic;
@@ -73,13 +75,14 @@
 
 .form-style-4 input[type=submit],
 .form-style-4 input[type=button]{
-	background: #576E86;
-	border: none;
+
+	background: #707371;
 	padding: 8px 10px 8px 10px;
 	border-radius: 5px;
-	color: #A8BACE;
+	color: white;
+	 margin-left: 350px;
 }
 .form-style-4 input[type=submit]:hover,
 .form-style-4 input[type=button]:hover{
-background: #394D61;
+background: #01A71E;
 }

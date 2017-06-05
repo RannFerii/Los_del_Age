@@ -4,13 +4,13 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<link rel="stylesheet" href="css/insertar_style.css">
 		<title>period_has_group</title>
-		<script src="js/student_has_subject.js"></script>
+		<script src="js/period_has_group_has_student.js"></script>
 
 	</head>
 	<body>
 
 		<form class="form-style-4"  method="post"  action="CRUD/create.php" >
-		<label align="center">student_has_subject</label><br>
+		<label align="center">Periodo - Estudiante</label><br>
 		
 	    <?php
 			require'../conexion.class.php';
@@ -52,6 +52,11 @@
 		         </select>
 		</label>
 
+		<!--ID PERIOD CONECTADO DE CYCLE_HAS_SUBJECT CON STUDENT_HAS_SUBJECT ¡-->
+
+		<select class= "field-slid" id="query_cycle_has_subject"   name="cycle_has_subject_id">			     
+		</select>
+		
 		<label>
 			<span>Materia</span>
 				<select class= "field-slid" name="materia" id ="query_subject">
@@ -73,9 +78,7 @@
 
 
 
-		<!--ID PERIOD CONECTADO DE CYCLE_HAS_SUBJECT CON STUDENT_HAS_SUBJECT ¡-->
-		<select class= "field-slid" id="query_cycle_has_subject"  style="visibility:hidden" name="cycle_has_subject_id">			     
-		</select>
+		
 
 		<label>
 			<span>Alumno</span>

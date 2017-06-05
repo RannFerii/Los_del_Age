@@ -83,7 +83,7 @@ $(function(){
 		var id= $(this).val();
 		
 		$.ajax({
-			url: 'jsSelect/js_period_connect_student.php',
+			url: 'jsSelect/js_period_connect.php',
 			type: 'post',
 			data: {query_period:id},
 			success: function (data){
@@ -101,23 +101,18 @@ $(function(){
 
 });
 
-
-
-// subject  student
-
-
 $(function(){
 
 	$("#query_subject").change(function(){ 
 		var id= $(this).val();
 		
 		$.ajax({
-			url: 'jsSelect/js_subject_student.php',
+			url: 'jsSelect/js_subject_id.php',
 			type: 'post',
-			data: {query_subject_student:id},
+			data: {query_subject_id:id},
 			success: function (data){
 
-				$("#query_student")
+				$("#query_cycle_has_subject")
 				.find('option')
 				.remove()
 				.end()
@@ -130,29 +125,9 @@ $(function(){
 
 });
 
-$(function(){
 
-	$("#query_student").change(function(){ 
-		var id= $(this).val();
-		
-		$.ajax({
-			url: 'jsSelect/js_student_period_has_group_id.php',
-			type: 'post',
-			data: {query_period_has_group_has_student_id:id},
-			success: function (data){
 
-				$("#query_period_has_group_has_student_id")
-				.find('option')
-				.remove()
-				.end()
-				.append(data);
-				console.log(data);
-				
-			}
-		});
-	})
 
-});
 
 
 //subject group

@@ -5,7 +5,7 @@
 
 			$id_period=$_POST["query_period"];
 
-			$query="SELECT  id,subject_id FROM period_has_group where  period_id='$id_period'";
+			$query="SELECT  id,subject_id ,period_id FROM period_has_group where  period_id='$id_period'";
 		    $res=$db->query($query);
 			$option='';
 			$teacher='';
@@ -17,24 +17,27 @@
 
 				
 				$materia[$contador]=$row['subject_id'];
+				$id_period_has_group[$contador]=$row['id'];
 				$contador=$contador + 1;
-				echo $contador ."<br>";
+				
 			}
 			
-		
 			$longitud= count($materia);
-			echo $longitud."<br>";
+			
 			$option.= "<option value=\"-\">Seleccionar</option>";
 			for( $i=0;$i<$longitud;$i++)
 			{
+				echo $id_period_has_group[$i]."<br>";
 				echo $materia[$i]."<br>";
+				
 			$query="SELECT  id,nombre_materia FROM subject where  id='$materia[$i]'";
 			$res=$db->query($query);
 
 
 				while($row= mysqli_fetch_array($res)){
 
-					$option.= "<option value=\"$row[id]\">$row[nombre_materia]</option>";
+					$option.= "<option value='$id_period_has_group[$i]'>$row[nombre_materia]</option>";
+					
 					
 				}
 

@@ -68,10 +68,7 @@
 			        <option value="7°-Cuatrimestre">7°-Cuatrimestre</option>
 			        <option value="8°-Cuatrimestre">8°-Cuatrimestre</option>
 			        <option value="9°-Cuatrimestre">9°-Cuatrimestre</option>
-			       
-			      
-			        
-
+			        <option value="10°-Cuatrimestre">10°-Cuatrimestre</option>
 			        
 		         </select>
 		</label>

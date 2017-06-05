@@ -1,10 +1,17 @@
 <?php
 
+
+ session_start();
+  if(!isset($_SESSION["usuario"]))
+  {
+    header("Location:../login.php");
+  }
+
 !isset($_POST) ? die('Acceso denegado') : '';
 require '../conexion.class.php';
 $db = new Conexion();
 
-////////////////////////////////////////////////////CYCLE_HAS_STUDENT//////////////////////////////////////////////
+////////////////////////////////////////////////////CYCLE_HAS_STUDENT////////////////
 
 if(isset($_POST['agregar_cycle_has_student'])){
 $subject  = $_POST["materia"];
@@ -25,8 +32,7 @@ echo "<script type=\"text/javascript\">alert(\"Tabla cental agregada\");</script
 echo '<meta http-equiv="Refresh" content="0;URL=../index.php">'; 
 }
 
-////////////////////////////////////////////////////STUDENT_HAS_SUBJECT//////////////////////////////////////////////
-
+////////////////////////////////////////////////////STUDENT_HAS_SUBJECT/////////////////
 if(isset($_POST['agregar_student_has_subject'])){
 $id = $_POST["cycle_has_subject_id"];
 $alumno=$_POST["student_id"];
@@ -38,11 +44,43 @@ echo $alumno."<br>";
 echo $tipo."<br>";
 $db->query($sql);
 
+
+ 
+}
+////////////////////////////////////////////////////ASISTENCIA///////////////
+if(isset($_POST['agregar_asistencia'])){
+$id = $_POST["period_has_group_has_student_id"];
+$asistencia=$_POST["asistencia"];
+$fecha=date("y-m-d");
+$sql=" INSERT INTO `presence`(`student_has_subject_id`,`presence_type`,`fecha_asistencia`) values ('$id','$asistencia','$fecha')";
+echo $id."<br>";
+echo $fecha."<br>";
+echo $asistencia."<br>";
+$db->query($sql);
+ 
+}
+
+///////////////////////////////////////////////////CALIFICACIONES///////////////
+
+if(isset($_POST['score_calificacion'])){
+$calificacion = $_POST["score_calificacion"];
+
+  $sql= "SELECT * FROM  score where calificacion='$calificacion'";
+      $res=$db->query($sql);
+     $fila=mysqli_num_rows($res);
+
+     if($fila==0){
+     	echo 1;
+     }else{
+     	echo 0;
+     }
+
  
 }
 
 
-////////////////////////////////////////////////////PRIMER FILTRO/////////////////////////////////////////////////
+
+////////////////////////////////////////////////////PRIMER FILTRO/////////////////////////////
 
 //INSERTAR EN FACULTAD
 if(isset($_POST['agregar_facultad'])){
@@ -120,7 +158,7 @@ echo '<meta http-equiv="Refresh" content="0;URL=../index.php">';
 
 
 
-////////////////////////////////////////////////////SEGUNDO FILTRO/////////////////////////////////////////////////
+////////////////////////////////////////////////////SEGUNDO FILTRO//////////////////////////////////
 
 //INSERTAR EN GRUPO
 if(isset($_POST['agregar_grupo'])){
@@ -145,7 +183,7 @@ echo '<meta http-equiv="Refresh" content="0;URL=../index.php">';
 }
 
 
-////////////////////////////////////////////////////TERCER FILTRO/////////////////////////////////////////////////
+////////////////////////////////////////////////////TERCER FILTRO/////////////////////////////////
 
 //INSERTAR EN PROFESOR
 if(isset($_POST['agregar_profesor'])){
