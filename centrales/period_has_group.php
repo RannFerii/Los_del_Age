@@ -11,7 +11,7 @@
 	<body>
 
 		<form class="form-style-4"  method="post"  action="CRUD/create.php" >
-		<label align="center">Cycle_has_subject</label><br>
+		<label align="center">Perdiodo - Grupo</label><br>
 		
 		<?php
 			require'../conexion.class.php';
@@ -33,7 +33,6 @@
 			        <?php echo $option;?>
 		         </select>
 		</label>
-		<br>
 		<label>
 			<span>Carrera</span>
 				<select class= "field-slid" name="carrera" id ="query_carrer">

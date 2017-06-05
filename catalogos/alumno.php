@@ -8,6 +8,13 @@
 </head>
 
 <body>
+	 <?php 
+	  session_start();
+	  if(!isset($_SESSION["usuario"]))
+	  {
+	    header("Location:login.php");
+	  }
+	  ?>
 
 	<form class="form-style-4" action="CRUD/create.php" method="post">
 	<label align="center">Alumno</label><br>

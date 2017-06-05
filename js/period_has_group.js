@@ -10,6 +10,7 @@ $(function(){
 			data: {query_facul:id},
 			success: function (data){
 
+
 				$("#query_carrer")
 				.find('option')
 				.remove()
@@ -17,14 +18,6 @@ $(function(){
 				.append(data);
 				console.log(data);
 
-				$("#query_cycle")
-				.find('option')
-				.remove()
-				.end();
-				$("#query_period")
-				.find('option')
-				.remove()
-				.end();
 			
 				
 			}
@@ -50,10 +43,7 @@ $(function(){
 				.end()
 				.append(data);
 				console.log(data);
-				$("#query_period")
-				.find('option')
-				.remove()
-				.end();
+				
 				
 			}
 		});

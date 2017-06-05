@@ -1,6 +1,6 @@
 <html>
   <head>
-  <title>MAIN</title>
+  <title>Los_del_Age</title>
   <link rel="stylesheet" href="css/nav_style.css">
   <script src="js/nav.js"></script>
   <script type="text/javascript" src="js/query.js"></script>
@@ -14,7 +14,7 @@
                 $("#MENU").load("a_p/asistencias.php");
                                              });
                 $('#promedio').click(function(){
-                $("#MENU").load("a_p/promedio.php");
+                $("#MENU").load("a_p/calificaciones.php");
                                              });
 
               //REPORTES
@@ -29,10 +29,10 @@
                                              });
 
                 //CENTRAL
-                $('#C_H_S').click(function(){
+                $('#periodo-grupo').click(function(){
                 $("#MENU").load("centrales/period_has_group.php");
                                              });
-                 $('#S_H_S').click(function(){
+                 $('#periodo-alumno').click(function(){
                 $("#MENU").load("centrales/period_has_group_has_student.php");
                                              });
 
@@ -92,6 +92,16 @@
   </head>
 
   <body>
+
+
+  <!--SESSION START ¡-->
+  <?php 
+  session_start();
+  if(!isset($_SESSION["usuario"]))
+  {
+    header("Location:login.php");
+  }
+  ?>
      <header>
         <div id="logo" class="menuUp">
             <IMG SRC="img/LDA1.png" height=50 >
@@ -115,20 +125,11 @@
 
 
                 <li>
-                    <a href="#">Central<span class="toggle">Expand</span><span class="caret"></span></a>
-                    <nav>
-                        <ul>
-                            <li><a href="#" id="C_H_S">cycle_has_subject</a></li>
-                            <li><a href="#" id="S_H_S">student_has_subject</a></li>
-                          
-                        </ul>
-                    </nav>
-                </li>
-
-                <li>
                     <a href="#">Agregar<span class="toggle">Expand</span><span class="caret"></span></a>
                     <nav>
                         <ul>
+                            <li><a href="#" id="periodo-grupo">Periodo - Grupo</a></li>
+                            <li><a href="#" id="periodo-alumno">Periodo - Alumno</a></li>
                             <li><a href="#" id="profesor">Profesor</a></li>
                             <li><a href="#" id="alumno">Alumno</a></li>
                             <li><a href="#" id="facultad">Facultad</a></li>
@@ -157,7 +158,7 @@
                     <nav>
                         <ul>
                             <li><a href="#" id="asistencia">Asistencia</a></li>
-                            <li><a href="#" id="promedio">Promedio</a></li>
+                            <li><a href="#" id="promedio">Calificaciones</a></li>
                         </ul>
                     </nav>
                 </li>
@@ -173,6 +174,7 @@
                 
             </ul>
         </nav>
+  
     </header>
 
 <table>
