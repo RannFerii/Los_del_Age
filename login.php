@@ -104,7 +104,7 @@
             <input type="password"required autocomplete="off" id="passwd2" name="password2"/>
           </div>
      
-          <button onClick="validar()" class="button button-block" name="envio"/>Enviar</button>
+          <button id="validar" onClick="validar()" class="button button-block" name="envio"/>Enviar</button>
         </form>
 
       </div>
@@ -113,6 +113,8 @@
       
 </div> <!-- /form -->
 
+ <script src='js/jquery.min.js'></script>
+  <script src="js/login.js"></script>
 
 <?php
 
@@ -123,46 +125,34 @@ $base-> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 $conexion= mysqli_connect("localhost","root","","los_de_age");
 
-if(isset($_POST["envio"])){
+  if(isset($_POST["envio"])){
+  $confirContra=$_POST['password2'];
+  $email=$_POST["email"];
+  $usuario=$_POST["usuario"];
+  $password=$_POST["password"];
+  $nombre=$_POST["nombre"];
+  $apellido_paterno=$_POST["apellido_paterno"];
+  $apellido_materno=$_POST["apellido_materno"];
 
-$email=$_POST["email"];
-$usuario=$_POST["usuario"];
-$password=$_POST["password"];
-$nombre=$_POST["nombre"];
-$apellido_paterno=$_POST["apellido_paterno"];
-$apellido_materno=$_POST["apellido_materno"];
+  if($confirContra==$password){
+    
+    $sql=" INSERT INTO _user(email,usuario,password,nombre,apellido_paterno,apellido_materno) values (:email,:usuario,:password,:nombre,:apellido_paterno,:apellido_materno)";
 
+  $resultado=$base->prepare($sql);
+  $resultado->execute(array(":email"=>$email,":usuario"=>$usuario, ":password"=>$password, ":nombre"=>$nombre, ":apellido_paterno"=>$apellido_paterno,":apellido_materno"=>$apellido_materno));
 
-$sql=" INSERT INTO _user(email,usuario,password,nombre,apellido_paterno,apellido_materno) values (:email,:usuario,:password,:nombre,:apellido_paterno,:apellido_materno)";
-
-$resultado=$base->prepare($sql);
-$resultado->execute(array(":email"=>$email,":usuario"=>$usuario, ":password"=>$password, ":nombre"=>$nombre, ":apellido_paterno"=>$apellido_paterno,":apellido_materno"=>$apellido_materno));
-
-header("location:login.php");
+  header("location:login.php");
+  }
+  
+echo "<script>";
+echo "alert('Las contraseñas no son iguales¡, falló el registro');";  
+echo "window.location = 'login.php';";
+echo "</script>"; 
 }
 
 
 ?>
-  <script src='js/jquery.min.js'></script>
-  <script src="js/login.js"></script>
-
-   <script>
-function validar(){
-  if (document.form.passwd.value == document.form.passwd2.value)
-      {
-      alert('¡La contraseña no puede ser igual al usuario!');
-      document.form.passwd2.focus();
-    return;
-    }
-  else
-  {
-    /* Si todo está OK se prosigue con lo que sea: */
-        alert('¡Todo está bien, continue!');
-    document.form.submit;
-  }
-}
-  </script>
-
+ 
 
 </body>
 </html>
