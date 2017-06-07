@@ -34,6 +34,7 @@ header {
     header > div#logo {
         line-height: 70px;
         position: relative;
+        
     }
     
     header > .menuDown {
@@ -158,7 +159,7 @@ header {
         padding: 0 3rem;
 		
         text-align: left;
-		width: 100%;
+		width: 111%;
     }
     
         header > div#logo {
