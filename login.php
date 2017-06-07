@@ -134,20 +134,28 @@ $conexion= mysqli_connect("localhost","root","","los_de_age");
   $apellido_paterno=$_POST["apellido_paterno"];
   $apellido_materno=$_POST["apellido_materno"];
 
-  if($confirContra==$password){
-    
-    $sql=" INSERT INTO _user(email,usuario,password,nombre,apellido_paterno,apellido_materno) values (:email,:usuario,:password,:nombre,:apellido_paterno,:apellido_materno)";
+  $buscarCorreo="SELECT email FROM _user WHERE email='$email'";
+  $res=mysqli_query($conexion,$buscarCorreo);
+  $contar=mysqli_num_rows($res);
+if($contar=0){
+    if($confirContra==$password){
+      $sql=" INSERT INTO _user(email,usuario,password,nombre,apellido_paterno,apellido_materno) values (:email,:usuario,:password,:nombre,:apellido_paterno,:apellido_materno)";
 
-  $resultado=$base->prepare($sql);
-  $resultado->execute(array(":email"=>$email,":usuario"=>$usuario, ":password"=>$password, ":nombre"=>$nombre, ":apellido_paterno"=>$apellido_paterno,":apellido_materno"=>$apellido_materno));
+    $resultado=$base->prepare($sql);
+    $resultado->execute(array(":email"=>$email,":usuario"=>$usuario, ":password"=>$password, ":nombre"=>$nombre, ":apellido_paterno"=>$apellido_paterno,":apellido_materno"=>$apellido_materno));
 
-  header("location:login.php");
+      header("location:login.php");
+      }
+    echo "<script>";
+    echo "alert('Las contraseñas no son iguales¡, falló el registro , $contar');";  
+    echo "window.location = 'login.php';";
+    echo "</script>"; 
   }
-  
-echo "<script>";
-echo "alert('Las contraseñas no son iguales¡, falló el registro');";  
-echo "window.location = 'login.php';";
-echo "</script>"; 
+  echo "<script>";
+  echo "alert('ya esta registrado ese correo, registrese de nuevo');";  
+  echo "window.location = 'login.php';";
+  echo "</script>"; 
+
 }
 
 
