@@ -8,7 +8,6 @@
 	$alumno= $_POST['OpcionEscogida'];
 	$alumnoid=$_POST['alumno'];
 	$conexion = mysqli_connect("localhost","root","","los_de_age");
-	$query4=mysql_query("SELECT id FROM student WHERE CONCAT(nombre,'',apellido_paterno,'',apellido_materno) = '$alumno' ");
 	$consultagral="SELECT subject.nombre_materia,score.DepartamentalA,score.DepartamentalB,score.Parcial,score.FinalA,score.FinalB,score.promedio FROM score INNER JOIN student_has_subject ON score.student_has_subject_id = student_has_subject.id INNER JOIN period_has_group ON period_has_group.id=student_has_subject.period_has_group_id INNER JOIN subject ON subject.id=period_has_group.subject_id INNER JOIN student ON student.id=student_has_subject.student_id WHERE student.id = '$alumnoid'";
 	$result=mysqli_query($conexion,$consultagral);
 	$pdf=new fpdf();
